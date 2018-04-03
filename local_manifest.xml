@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remove-project name="LineageOS/android_system_qcom"/>
-
-  <remote name="omni" fetch="https://github.com/omnirom/"/>
-
-<!-- bluetooth -->
-  <remove-project name="LineageOS/android_system_bt"/>
-  <remove-project name="LineageOS/android_packages_apps_Bluetooth"/>  
-  <!--project path="packages/apps/Bluetooth" name="danielhk/android_packages_apps_Bluetooth"/-->
-
-  <remove-project name="LineageOS/android_packages_apps_BluetoothExt"/>
-
-<!-- browser -->
-  <remove-project name="LineageOS/android_packages_apps_Browser"/>
-  <remove-project name="LineageOS/android_packages_apps_Gello"/>
-  <project path="packages/apps/Gello" name="LineageOS/android_packages_apps_Gello" revision="cm-14.1" />
-  <!--project path="packages/apps/Browser" name="omnirom/android_packages_apps_Browser" revision="android-6.0"/-->
+<remove-project name="platform/prebuilts/eclipse"/>
+<remove-project name="platform/prebuilts/python/darwin-x86/2.7.5"/>
+<remove-project name="platform/prebuilts/gcc/linux-x86/host/x86_64-w64-mingw32-4.8"/>
 
 
+<!-- bluez support-->
   <remote name="gcode" fetch="https://code.google.com/p/"/>
   <remote name="korg" fetch="git://git.kernel.org/pub/scm/bluetooth/"/>
   <remote name="bluez-android" fetch="https://github.com/bluez-android"/>
 
-  <project path="external/bluetooth/bluez" name="danielhk/android_external_bluetooth_bluez"/>
+  <remove-project name="LineageOS/android_external_bluetooth_bluedroid"/>
+  
+  <!--project remote="korg" path="external/bluetooth/bluez" name="bluez" group="pdk" revision="master"/-->
+  <project  path="external/bluetooth/bluez" name="danielhk/android_external_bluetooth_bluez" revision="master"/>
+
   <project remote="korg" path="external/bluetooth/sbc" name="sbc" group="pdk" revision="master"/>
   <project remote="bluez-android" path="external/bluetooth/glib" name="glib" group="pdk" revision="master"/>
 
-<!-- keyboard -->
-  <remove-project name="LineageOS/android_packages_inputmethods_LatinIME"/>
-  <project path="packages/inputmethods/LatinIME" name="platform/packages/inputmethods/LatinIME" remote="aosp"/>
+  <remove-project name="LineageOS/android_packages_apps_Bluetooth"/>
+  <remove-project name="LineageOS/android_packages_apps_BluetoothExt"/>
+  <project path="packages/apps/Bluetooth" name="danielhk/android_packages_apps_Bluetooth" />
 
-
-<!-- device related -->
-  <project path="external/stlport" name="LineageOS/android_external_stlport" />
-  <project path="hardware/atheros" name="danielhk/android_hardware_atheros_wlan" />
-  <project path="hardware/samsung" name="LineageOS/android_hardware_samsung" />
+<!-- browser -->
+  <remove-project name="LineageOS/android_packages_apps_Browser"/>
+  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" remote="aosp"/>
+  
   <project path="packages/apps/SamsungServiceMode" name="LineageOS/android_packages_apps_SamsungServiceMode" />
 
 
-<!-- device trees and kernel -->
-  <project name="danielhk/android_kernel_samsung_smdk4210" path="kernel/samsung/smdk4210" />
-  <project name="danielhk/proprietary_vendor_samsung_smdk4210" path="vendor/samsung" />
+<!-- device tree for the building device -->
+  <project name="LineageOS/android_hardware_atheros_wlan" path="hardware/atheros/wlan" />
 
-  <project name="danielhk/android_device_samsung_smdk4210-tab" path="device/samsung/smdk4210-tab" />
   <project name="danielhk/android_device_samsung_p6800" path="device/samsung/p6800" />
   <project name="danielhk/android_device_samsung_p6810" path="device/samsung/p6810" />
   <project name="danielhk/android_device_samsung_i815" path="device/samsung/i815" />
   <project name="danielhk/android_device_samsung_p6200" path="device/samsung/p6200" />
   <project name="danielhk/android_device_samsung_p6210" path="device/samsung/p6210" />
+
+  <project name="danielhk/android_device_samsung_smdk4210-tab" path="device/samsung/smdk4210-tab" />
+  <project name="danielhk/proprietary_vendor_samsung_smdk4210" path="vendor/samsung" />
+  <project name="LineageOS/android_hardware_samsung" path="hardware/samsung" />
+
+  <project name="frami2/android_kernel_samsung_smdk4210" path="kernel/samsung/smdk4210"/>
+
+
+
+  <remove-project name="LineageOS/android_frameworks_opt_setupwizard"  />
+  <project path="frameworks/opt/setupwizard" name="LineageOS/android_frameworks_opt_setupwizard" groups="pdk-cw-fs" revision="cm-13.0" />
 
 </manifest>
