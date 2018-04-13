@@ -13,8 +13,7 @@
 
   <remove-project name="LineageOS/android_external_bluetooth_bluedroid"/>
   
-  <!--project remote="korg" path="external/bluetooth/bluez" name="bluez" group="pdk" revision="master"/-->
-  <project  path="external/bluetooth/bluez" name="danielhk/android_external_bluetooth_bluez" revision="master"/>
+  <project path="external/bluetooth/bluez" name="frami2/android_external_bluetooth_bluez"/>
 
   <project remote="korg" path="external/bluetooth/sbc" name="sbc" group="pdk" revision="master"/>
   <project remote="bluez-android" path="external/bluetooth/glib" name="glib" group="pdk" revision="master"/>
@@ -22,11 +21,6 @@
   <remove-project name="LineageOS/android_packages_apps_Bluetooth"/>
   <remove-project name="LineageOS/android_packages_apps_BluetoothExt"/>
   <project path="packages/apps/Bluetooth" name="frami2/android_packages_apps_Bluetooth" />
-
-<!-- browser -->
-  <!--remove-project name="LineageOS/android_packages_apps_Browser"/>
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" remote="aosp"/-->
-  
 
 
 <!-- device tree for the building device -->
